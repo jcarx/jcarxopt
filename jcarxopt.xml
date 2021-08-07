@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * 2021 Ravi Manthena.
+ * https://www.jcarx.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *-->
+<project name="${appname}" default="info" basedir=".">
+    
+    <!-- Master ant properties -->
+    <property file="jcarxopt.properties"/>
+    <!-- timestamp usage build-info.current-date / current-time-->
+    <tstamp prefix="build-info">
+        <format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
+        <format property="current-time" pattern="hh:mm:ss a z" locale="en" />
+    </tstamp>
+    
+    <!-- include and set master classpath for source build -->
+    <path id="project.class.path">      
+        <fileset dir="${netbeans.classpath}" includes="*.jar"/>
+    </path>
+    
+    <target name="print_classpath">
+        <property name="myclasspath" refid="project.class.path"/>
+        <echo message="Classpath = ${myclasspath}"/>
+    </target>
+  
+    <!-- Target for ant set up-->
+    <target name="info">    
+        <echo/>
+        <echo>Apache Ant version is </echo>
+        <echo>${ant.version}</echo>
+        <echo/>
+        
+        <echo>appname is ${appname}</echo>
+        
+        <!-- read only -->
+        <echo/>
+        <echo>read only</echo>
+        <echo>netbeans.src.dir is ${netbeans.src.dir}</echo>
+        <echo>netbeans.classpath is ${netbeans.classpath}</echo>
+        
+        <!-- write only -->
+        <echo/>
+        <echo>write only</echo>
+        <echo>netapp.dist.dir is ${jcarxopt.dist.dir}</echo>
+        <echo>javadoc dir ${jcarxopt.dist.dir}/doc</echo>
+    </target>
+    
+    <!-- Target for deleting the existing directories-->
+    <target name="netappclean">
+        <delete dir="${jcarxopt.dist.dir}" />
+    </target>
+ 
+    <!-- Target for creating the new directories-->
+    <target name="netappmakedir">
+        <mkdir dir="${jcarxopt.dist.dir}" />
+    </target>
+ 
+    <!-- Target for compiling the java code-->
+    <target name="compile" depends="print_classpath"> 
+        <javac includeantruntime="false" srcdir="${netbeans.src.dir}" destdir="${jcarxopt.dist.dir}">
+            <classpath refid="project.class.path"/>
+        </javac>
+        <!-- javadoc sourcepath="${netbeans.src.dir}" destdir="${netapp.dist.dir}/doc"/ -->
+        <antcall target="docs"/>
+    </target>
+    
+    <!-- Target for java docs http://host:port/appname/doc/index.html http://jay-pc:8080/NetApps/doc/index.html -->
+    <target name = "docs">
+        <mkdir dir="doc"/>
+        <javadoc packagenames="com.jcarx*" sourcepath="${netbeans.src.dir}" 
+                 destdir = "${jcarxopt.dist.dir}/doc" version = "true" windowtitle = "jcarxopt">
+            <doctitle><![CDATA[= jcarx.com Api =]]></doctitle>
+            <bottom>
+                <![CDATA[Copyright © 2021. http://www.apache.org/licenses/LICENSE-2.0]]>
+            </bottom>
+            <group title = "jcarxopt packages" packages = "*.*"/>
+        </javadoc>
+        <echo message = "java doc has been generated!" />
+    </target>
+ 
+    <!-- Target for creating the deployable jar/war ear file  -->
+    <target name="jar">
+             <jar destfile="${jcarxopt.dist.dir}/${appname}.jar" basedir="${jcarxopt.dist.dir}" />
+    </target>
+  
+    <!-- Default target to run all targets-->
+    <target name="runall" depends="info,netappclean,netappmakedir,compile,jar">
+        <description>Main target</description>
+    </target>
+</project>

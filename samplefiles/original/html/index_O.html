@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Charmonman' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="http://localhost:8080/NetFileService/css/opt.css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost:8080/NetFileService/css/prism.css"/>
+        <!-- link rel="stylesheet" type="text/css" href="./css/opt.css"/ -->
+    </head>
+    <body onload="optWindow('input')">
+        <a href="out.html">out Tester</a>
+    <center>
+        <table width="80%">
+            <tr>
+                <td>
+                    <div class="opttab">
+                        <button class="opttablinks" onclick="location.reload()">&nbsp;&nbsp;&#127968;&nbsp;&nbsp;</button>
+                        <button class="opttablinks" onclick="optWindow('input')">Input</button>
+                        <button class="opttablinks" onclick="optWindow('output')">Output</button>
+                        <span class='opttablogotext'>jcarX &nbsp;v1.2&nbsp;&nbsp;</span>
+                    </div>
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="input" class="opttabcontent">
+                        <table width="100%">
+                            <td width="70%">
+                                <div class="drop-zone fontbig" id="drop-zone">
+                                    <span class="drop-zone__prompt"><br><br>
+                                        Tap or Drop<br><br>to<br><br>
+                                        upload your file
+                                        <br><br><br><br>
+                                        Optimize your files<br><br>
+                                        for Web / Mobile<br>
+                                    </span><br><br><br><br>
+                                    <input type="file" name="file" class="drop-zone__input">
+                                </div>
+                                <div class="text-zone" id="text-zone"> 
+                                    <textarea class="textdisplay disabledInput" id="textdisplay" rows=10 cols=10 disabled>
+                                    </textarea>
+                                    <div class="netbutoptdiv" >
+                                        <center>
+                                            <table class="netbutopttable">
+                                                <tr>
+                                                    <td class="netbutopttable-td-center"><div id="fileuploadnametxt">&nbsp;&nbsp;</div></td>
+                                                    <td class="netbutopttable-td">
+                                                        <a href="javascript:optimizecss();"> 
+                                                            <div class="netbutopt" id="netbutopttxt" hidden>                                               
+                                                                &#10148;&nbsp;Optimize&nbsp;&#128193;
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td class="netbutopttable-td">
+                                                        <div> <img src="http://localhost:8080/NetFileService/images/progress.gif" 
+                                                                   class="loading-image" id="loading-imagetxt" hidden/></div>
+                                                    </td>                              
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="image-zone" id="image-zone"> 
+                                    <img id="imagedisplay" class="imagedisplay" src="" alt="alt"/><img>
+                                    <div class="netbutoptdiv" >
+                                        <center>
+                                            <table class="netbutopttable">
+                                                <tr>
+                                                    <td class="netbutopttable-td-center">
+                                                        <div id="fileuploadnameimg">&nbsp;&nbsp;</div></td>
+                                                    <td class="netbutopttable-td">
+                                                        <a href="javascript:optimizeimage();"> 
+                                                            <div class="netbutopt" id="netbutoptimg" hidden>                                               
+                                                                &#10148;&nbsp;Optimize&nbsp;&#128193;
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td class="netbutopttable-td">
+                                                        <div> <img src="http://localhost:8080/NetFileService/images/progress.gif" 
+                                                                   class="loading-image" id="loading-imageimg" hidden/></div>
+                                                    </td>                              
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="video-zone" id="video-zone">
+                                    <center>
+                                        <div id="videodisplay" class="videodisplay">                                
+                                            <!-- video id="videofile" autoplay muted loop -->
+                                            <div class="videofilediv">
+                                                <video id="videofile" autoplay muted loop width="480">
+                                                    <source src=""/>
+                                                </video>  
+                                            </div>
+                                        </div>
+                                    </center>
+                                    <div class="netbutoptdiv" >
+                                        <center>
+                                            <table class="netbutopttable">
+                                                <tr>
+                                                    <td class="netbutopttable-td-center">
+                                                        <div id="fileuploadnamevid">&nbsp;&nbsp;</div></td>
+                                                    <td class="netbutopttable-td">
+                                                        <a href="javascript:optimizevideo();"> 
+                                                            <div class="netbutopt" id="netbutoptvid" hidden>                                               
+                                                                &#10148;&nbsp;Optimize&nbsp;&#128193;
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td class="netbutopttable-td">
+                                                        <div> <img src="http://localhost:8080/NetFileService/images/progress.gif" 
+                                                                   class="loading-image" id="loading-vid" hidden/></div>
+                                                    </td>                              
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="30%">
+                                <div class="tools-zone" id="tools-zone">
+                                    <div class='opt-buttondiv'>
+                                        <center class='fonttinyfancy'>Support Share</center>
+                                        <div class="divsharebtn">
+                                            <img src="http://localhost:8080/NetFileService/images/fb32.png" 
+                                                 class="shareimghvr" alt="Facebook" width="26" height="26"
+                                                 onclick="shareevent('fb')"
+                                                 >
+                                            <img src="http://localhost:8080/NetFileService/images/yt32.png" 
+                                                 class="shareimghvr" alt="YouTube" width="26" height="26" 
+                                                 onclick="shareevent('yt')"
+                                                 >
+                                            <img src="http://localhost:8080/NetFileService/images/ln32.png" 
+                                                 class="shareimghvr" alt="Linkden" width="26" height="26"
+                                                 onclick="shareevent('ln')"
+                                                 >
+                                            <img src="http://localhost:8080/NetFileService/images/tw32.png" 
+                                                 class="shareimghvr" alt="Twitter" width="26" height="26"
+                                                 onclick="shareevent('tw')"
+                                                 >
+                                            <a href="https://wa.me/919989370575" target="_blank" rel="noopener">
+                                                <img src="http://localhost:8080/NetFileService/images/em32.png" 
+                                                     class="shareimghvr" alt="Whatsup" width="26" height="26"></a>
+                                        </div>
+                                    </div>
+                                    <div class="toolsform-zone1" id="toolsform-zone1">
+                                        <div class="animateopttext">
+                                            <center>
+                                                <br>
+                                                &nbsp;Optimize Images <br>
+                                                .gif .gif(ani) .png .jpeg<br><br>
+                                                &nbsp;Optimize Mobile/Web <br>
+                                                .css .js .html<br><br>
+                                                &nbsp;Optimize Videos <br>
+                                                &nbsp;mp4<br><br> 
+                                                &nbsp;Contact<br>
+                                                bulkloads, more formats<br><br>
+                                            </center>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="toolsform-zone2" id="toolsform-zone2">
+                                        <div class="toolsform-user fonttiny"> 
+                                            Comments<br>
+                                            <label>&nbsp;&nbsp;remove&nbsp;&nbsp;
+                                                <input id="comment" type="radio" value="remove" checked>    
+                                            </label>&nbsp;&nbsp;
+                                            <label >&nbsp;&nbsp;intact
+                                                <input id="comment" type="radio" value="intact">
+                                            </label><br><hr>
+                                            New Lines<br>
+                                            <label>&nbsp;&nbsp;remove&nbsp;&nbsp;
+                                                <input  id="newline" type="radio" value="remove" checked>    
+                                            </label>&nbsp;&nbsp;
+                                            <label>&nbsp;&nbsp;intact
+                                                <input  id="newline" type="radio" value="intact">
+                                            </label><br><hr> 
+                                            Extra Characters<br>
+                                            <label>&nbsp;&nbsp;remove&nbsp;&nbsp;
+                                                <input checked id="extrachr" type="radio" value="remove">    
+                                            </label>&nbsp;&nbsp;
+                                            <label>&nbsp;&nbsp;intact
+                                                <input id="extrachr" type="radio" value="intact">
+                                            </label><br><hr>
+                                            Tiny Extra's<br>
+                                            <label>&nbsp;&nbsp;remove&nbsp;&nbsp;
+                                                <input disable checked id="tinychr" type="radio"  value="remove">    
+                                            </label>&nbsp;&nbsp;
+                                            <label>&nbsp;&nbsp;intact
+                                                <input disable id="tinychr" type="radio" value="intact">
+                                            </label><br><br>  
+                                        </div>
+                                    </div>
+                                    <div class="toolsform-advanced" id="toolsform-advanced">                                
+                                        <button class='toolsform-advancedtxt' onclick="enablejason()">Advance (Enable)</button>
+                                        <button class='toolsform-advancedtxthelp' onclick="optWindow(event, 'help')">Help</button>   
+                                    </div>
+                                    <div class="rules-zone" id="rules-zone">
+                                        <!-- br>
+                                        <center>Advance Settings</center>
+                                        <br -->
+                                        <textarea disabled class="rulesdisplay" id="rulesdisplay" 
+                                                  rows="10" cols="5"><jsp:include page="/jspincludes/rulescss.jsp" />   
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="output" class="opttabcontent">
+                        <table width="100%">
+                            <td width="100%">
+                                <div>
+                                    <div class="output-zone"> 
+                                         <center>
+                                            <div> <img src="http://localhost:8080/NetFileService/images/progress.gif" 
+                                                       class="loading-image outputresultswaitani" id="loading-imageout" hidden/>
+                                            </div>
+                                            <div id="outputtable"  class="outputtable outputresultsani">
+                                                <br><br><br><br>
+                                                <table class="outputboder"><!-- tr>&nbsp;</tr><tr>&nbsp;</tr><tr>&nbsp;</tr -->
+                                                    <tr>
+                                                        <th class="outputtablelogo">jcarX&nbsp;v1.2</th>
+                                                        <th>Original</th>
+                                                        <th>Optimized</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><div style="float: left">FileName</div></th>
+                                                        <td class="outputpadcenter"><div id="originalfname"></div></td>
+                                                        <td class="outputpadcenter">
+                                                            <div id="processedfname">
+                                                                </div></td>                                                
+                                                    </tr>
+                                                    <tr>
+                                                        <th><div style="float: left">FileSize</div></th>                                                 
+                                                        <td class="outputpadcenter"><div id="originalsize">4000</div></td>
+                                                        <td class="outputpadcenter">
+                                                            <div id="processedfsize">2000</div></td>                                           
+                                                    </tr>
+                                                    <tr>
+                                                        <th><div style="float: left">Size %</div></th>    
+                                                        <td class="outputpadcenter">
+                                                            <div class="outputorgper" id="outputorgper">
+                                                                <span id="outputorgperp">&nbsp;100</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="outputpadcenter">
+                                                            <div class="outputoptper" id="outputoptper"> 
+                                                                <span id="outputoptperp">&nbsp;</span>
+                                                            </div>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <th><div style="float: left">Download</div></th>                                                      
+                                                        <td>&nbsp;</td>                                         
+                                                        <td class="outputlink outputpadcenter ">
+                                                            <a href="" id="processedpath" download>Download </a>
+                                                        </td>
+                                                    </tr>
+                                                </table> 
+                                            </div>
+                                            <br><br>
+                                            <div id="demolink" class="demolink">
+                                                <a href="#" class="outputlink" onclick="optWindow('demo');">See your image in Action</a>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="demo" class="opttabcontent">
+                        <div id="includedContent"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="help" class="opttabcontent">
+                        <jsp:include page="/jspincludes/help.jsp" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class='footer'>
+                        <a href="#" class="netbutbottom">Sign In</a>
+                        <a href="#" class="netbutbottom">Do More</a>
+                        <a href="#" class="netbutbottom">Terms</a>
+                        <a href="#" class="netbutbottom">Privacy</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function enablejason() {
+            document.getElementById('rulesdisplay').disabled = false;
+        }
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  
+    <!-- script src="http://localhost:8080/NetFileService/scripts/opt.js"></script -->
+    <script src="http://localhost:8080/NetFileService/scripts/opt.js"></script>
+</body>
+</html>

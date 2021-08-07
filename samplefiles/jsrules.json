@@ -1,0 +1,15 @@
+{
+    "name": "js",
+    "version": "1.1",
+    "searchreplace":
+            {
+                "000000": "000",
+                "(?i)ffffff": "fff",
+                "0000ff": "00f"
+            },
+    "removelogs":
+            {
+                "console": ");",
+                "alert": ");"
+            }
+}

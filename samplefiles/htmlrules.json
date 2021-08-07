@@ -1,0 +1,17 @@
+{
+    "name": "html",
+    "version": "1.1",
+    "searchreplace":
+            {
+                "000000": "000",
+                "(?i)ffffff": "fff",
+                "0000ff": "00f"
+            },
+    "remove":
+            {
+                "<!--": "-->",
+                "/*": "*/"
+            },   
+    "arrayplaceholder":
+            ["i", "am", "not", "used", "for", "now"]
+}

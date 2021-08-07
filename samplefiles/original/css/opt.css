@@ -1,0 +1,323 @@
+.optjcarxtablemain{
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+    width: 100%;
+}
+.optjcarxtablegeneric{
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+}
+.opttabcontent { 
+}
+
+.opttablogotext{ 
+    float: right;
+}
+/* Style the buttons inside the tab */
+.netbutopt{
+    max-width: 150px;
+    height: 26px;
+    padding: 2px 5px 30px 5px;
+    border: 2px solid #696c6f;
+    border-radius: 10% 10% 10% 10%;
+    font-size: 20px;
+    text-align: center;
+}
+.netbutopt:hover{
+    color: #000;
+    background-image: radial-gradient(#ffffff,#b3d7ff);
+    text-decoration:none;
+}
+.fileuploadnametxt{
+    align-items: center; 
+    padding: 2px 2px 2px 2px;
+}
+.loading-image{
+    width: 38px;
+    height: 38px;
+}
+.netbutoptdiv{
+    position: relative;
+    max-width: 100%;
+    height: 38px;
+    border-top: 1px solid #696c6f;
+}
+.netbutopttable{
+    border-collapse: collapse;
+    height: 38px;
+}
+.netbutopttable-td {
+    height: 30px;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.text-zone {
+    max-width: 100%;
+    height: 500px;
+    cursor:copy;
+    display: none;
+}
+.image-zone {
+    max-width: 100%;
+    height: 500px;
+    cursor:copy;
+    display: none;
+}
+.video-zone {
+    max-width: 100%;
+    height: 500px;
+    cursor:copy;
+    display: none;
+}
+/** 
+    border: 2px solid #696c6f; */
+.output-zone {
+    max-width: 100%;
+    height: 504px;   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.outputorgper{
+    background-color: #FF0000;
+    width: 100%;
+    height: 70%;
+    border-radius: 0px 20px 20px 0px;
+}
+.outputoptper{
+    background-color: #39ff14;
+    width: 20%;
+    height: 70%;
+    border-radius: 0px 20px 20px 0px;
+}
+.loading-imageopt{
+    width: 100px;
+    height: 100px;  
+}
+.outputtable{
+    position: relative;
+    display: none; 
+}
+.demolink{
+    margin-top: 60px;
+    position: relative;
+    display: none; 
+}
+/**
+    border: 1px darkseagreen;
+    border-style: solid;
+*/
+.outputboder{
+}
+.outputpadcenter{
+    padding: 12px 17px 12px 17px;
+    text-align: center;
+}
+/* end of outter */
+/** 
+    border: 2px solid #696c6f; */
+.help{
+    max-width: 100%;
+    height: 504px;
+    cursor: pointer;
+    overflow: auto;
+}
+/* 
+    border: 2px solid #696c6f; */
+.demo{
+    max-width: 100%;
+    height: 504px;
+    cursor: pointer;
+    overflow: auto;
+}
+/* Change background color of buttons on hover */
+.opttab button:hover {
+    background-image: radial-gradient(#ffffff,#b3d7ff);
+}
+/* Create an active/current tablink class */
+.opttab button.active {
+    background-color: #ccc;
+}
+.opttabbut {
+    overflow: hidden;
+}
+.opttabbut button {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+/* Change background color of buttons on hover */
+.opttabbut:hover {
+    background-color: #fff;
+}
+/* Create an active/current tablink class */
+.opttabbut.active {
+    background-color: #ccc;
+}
+.textdisplay{	
+    width: 100%; 
+    height: 460px;
+    padding: 10px; 
+    border:0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* IE 8+ */
+}
+.disabledInput {
+    color: black;
+}
+/* image dispay */
+.imagedisplay{	
+    width: 100%; 
+    height: 460px;
+    padding: 10px; 
+    border-radius: 5px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* IE 8+ */
+}
+/* video */
+.videodisplay{	  
+    height: 460px;
+    padding: 10px; 
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* IE 8+ */
+}
+.videofilediv{
+    padding: 0px 0px 0px 0px;
+    border: 6px solid #566573;
+    border-style: outset;
+    background: #000;
+}
+.videofile{   
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* IE 8+ */
+}
+/* share begin */
+.opt-buttondivopt{
+    max-width: 100%;
+    height: 27px;
+    padding: 2px 2px 0px 0px;
+}
+.divsharebtnopt{
+    align-content: center;
+    border-radius: 50px;
+    width: 156px;
+    height: 28px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* end of share */
+.toolsform-zone1 {
+    margin-top: 15px;
+    max-width: 100%;
+    height: 90px;
+    border: 5px solid #566573;
+    border-style: outset;
+    background-color: #000;
+    overflow: hidden;
+}
+.toolsform-zone2 {
+    margin-top: 5px;
+    max-width: 100%;
+    height: 95px;
+    overflow: auto;
+    display: none;
+}
+.imagesetting{
+    display: none;
+}
+.toolsform-advanced{
+    max-width: 100%;
+    height: 30px;
+    padding: 8px 0px 0px 0px;
+    overflow: auto;
+    margin-bottom: -6px;
+    font-size: 14px;
+    display: none;
+}
+.toolsform-advancedtxt{  
+    text-align: center;
+    font-size: 14px;
+    width: 130px;
+    border-radius: 10px 10px 0px 0px;
+}
+.toolsform-advancedtxt:hover{
+    border-style: dashed;
+}
+.toolsform-advancedtxthelp{
+    margin-left: -5px;
+    text-align: center;
+    font-size: 14px;  
+    width: 40px;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid #696c6f;
+}
+.toolsform-advancedtxthelp:hover{
+    border-style: dashed;
+}
+.rules-zone {
+    margin-top: 10px;
+    max-width: 100%;
+    height: 208px;
+    cursor:copy;
+    display: none;
+}
+.help-textarea{
+    width: 40%; 
+    height: 260px;
+    padding: 10px; 
+    border:0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* IE 8+ */
+}
+
+input[type="text"][disabled] {
+    color: red;
+    background-color: #008080;
+}
+
+/* begin of opt marketing window ani 
+    background-image: radial-gradient(#4f0808,#000000);
+*/ 
+.animateopttext{
+    font-weight: 200;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    animation: opttextani 12s linear 1.6s infinite;
+}
+@keyframes opttextani {
+    0%  {left:0px; top:90px;}
+    5%  {left:0px; top:75px;}
+    10% {left:0px; top:60px;}
+    15% {left:0px; top:55px;}
+    20% {left:0px; top:40px;}
+    25% {left:0px; top:25px;}
+    30% {left:0px; top:10px;}
+    35% {left:0px; top:-5px;}
+    40% {left:0px; top:-20px;}
+    45% {left:0px; top:-35px;}
+    50% {left:0px; top:-50px;}
+    55% {left:0px; top:-65px;}
+    60% {left:0px; top:-80px;}
+    65% {left:0px; top:-95px;}
+    70% {left:0px; top:-110px;}
+    75% {left:0px; top:-125px;}
+    80% {left:0px; top:-140px;}
+    83% {left:0px; top:-155px;}
+    87% {left:0px; top:-170px;}
+    90% {left:0px; top:-185px;}
+    93% {left:0px; top:-200px;}
+    97% {left:0px; top:-215px;}
+    100% {left:0px; top:-230px;}
+}
